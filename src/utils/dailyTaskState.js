@@ -166,7 +166,6 @@ export async function loadDailyTaskConfig(
     "https://xxz-xyzw-res.hortorgames.com/data/version.json",
     { signal: AbortSignal.timeout(15000) },
   );
-  const version = response?.dataBundleVer;
   if(!versionResponse.ok) throw new Error("官方任务配置版本读取失败")；
   const versionInfo = await versionResponse.json();
   const version = versionInfo?.version;
